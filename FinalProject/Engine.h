@@ -27,6 +27,7 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 	Clock clock;
+	Time m_GameTimeTotal;
 public:
 	// The Engine constructor
 	Engine();

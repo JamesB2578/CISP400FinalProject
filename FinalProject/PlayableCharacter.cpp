@@ -1,5 +1,7 @@
 #include "PlayableCharacter.h"
 #include "TextureHolder.h"
+#include <iostream>
+using namespace std;
 
 void PlayableCharacter::spawn(Vector2f startPosition)
 {
@@ -19,6 +21,7 @@ void PlayableCharacter::update(float elapsedTime)
     if (m_LeftPressed)
     {
         m_Position.x -= m_Speed * elapsedTime;
+        cout << m_Position.x << endl;
     }
     // Handle Jumping
     if (m_IsJumping)
@@ -42,6 +45,8 @@ void PlayableCharacter::update(float elapsedTime)
     {
         m_Position.y += m_Gravity * elapsedTime;
     }
+
+    m_Sprite.setPosition(m_Position);
 
 }
 

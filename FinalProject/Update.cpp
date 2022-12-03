@@ -9,7 +9,6 @@ void Engine::update(float dtAsSeconds)
 	if (state == State::PLAYING)
 	{
 		player1.update(dtAsSeconds);
-		//Update Bob
 		player2.update(dtAsSeconds);
 	}
 }

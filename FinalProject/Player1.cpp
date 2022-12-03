@@ -1,5 +1,7 @@
 #include "Player1.h"
 #include "TextureHolder.h"
+#include <iostream>
+using namespace std;
 
 PlayerOne::PlayerOne()
 {
