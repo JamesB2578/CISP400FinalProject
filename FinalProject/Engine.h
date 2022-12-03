@@ -12,9 +12,10 @@ private:
 	PlayerOne player1;
 	PlayerOne player2;
 	TextureHolder th;
-	enum class State { PAUSED, CharacterSelect, GAME_OVER, PLAYING };
-	State state = State::CharacterSelect;
+	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
+	State state = State::GAME_OVER;
 	bool Character1Picked = false;
+	bool Character2Picked = false;
 	void input();
 	void update(float dtAsSeconds);
 	void draw();

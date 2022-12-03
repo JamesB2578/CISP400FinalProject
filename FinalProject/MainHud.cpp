@@ -9,7 +9,7 @@ Hud::Hud()
 
     m_selectText.setFont(m_Font);
     m_selectText.setCharacterSize(100);
-    m_selectText.setFillColor(Color::White);
+    m_selectText.setFillColor(Color::Black);
     m_selectText.setString("Selection Screen");
 
     FloatRect textRect1 = m_selectText.getLocalBounds();
@@ -22,7 +22,7 @@ Hud::Hud()
 
     m_endText.setFont(m_Font);
     m_endText.setCharacterSize(100);
-    m_endText.setFillColor(Color::White);
+    m_endText.setFillColor(Color::Black);
     m_endText.setString("End");
 
     FloatRect textRect2 = m_endText.getLocalBounds();
@@ -35,8 +35,8 @@ Hud::Hud()
 
     m_pausedText.setFont(m_Font);
     m_pausedText.setCharacterSize(100);
-    m_pausedText.setFillColor(Color::White);
-    m_pausedText.setString("PAUSED");
+    m_pausedText.setFillColor(Color::Black);
+    m_pausedText.setString("Select 2");
 
     FloatRect textRect3 = m_pausedText.getLocalBounds();
     m_pausedText.setOrigin(textRect3.left +

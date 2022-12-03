@@ -8,12 +8,12 @@ Engine::Engine()
 	resolution.x = VideoMode::getDesktopMode().width;
 	resolution.y = VideoMode::getDesktopMode().height;
 
-	m_Window.create(VideoMode(resolution.x, resolution.y),"Fighting Game",Style::Fullscreen);
+	m_Window.create(VideoMode(resolution.x, resolution.y),"Fighting Game",Style::Default);
 
 	// Initialize the full screen view
-	m_mainView.setSize(resolution);
+	//m_mainView.setSize(resolution);
 
-	m_Window.setView(m_mainView);
+	//m_Window.setView(m_mainView);
 
 	m_BackgroundTexture = TextureHolder::GetTexture(
 		"graphics/ArenaOne.png");
