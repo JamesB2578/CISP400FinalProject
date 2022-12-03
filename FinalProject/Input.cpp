@@ -77,26 +77,26 @@ void Engine::input()
 
 	if (state == State::CharacterSelect2)
 	{
-		if (Keyboard::isKeyPressed(Keyboard::Num1))
+		if (Keyboard::isKeyPressed(Keyboard::Num5))
 		{
 			player2.setCharacterType(0.0, 0.0, "graphics/pete.png", 0.0, 5.0);
 			Character2Picked = true;
 		}
 
-		if (Keyboard::isKeyPressed(Keyboard::Num2))
+		if (Keyboard::isKeyPressed(Keyboard::Num6))
 		{
 			player2.setCharacterType(0.0, 0.0, "graphics/ogre.png", 0.0, 5.0);
 			Character2Picked = true;
 
 		}
 
-		if (Keyboard::isKeyPressed(Keyboard::Num3))
+		if (Keyboard::isKeyPressed(Keyboard::Num7))
 		{
 			player2.setCharacterType(0.0, 0.0, "graphics/archer.png", 0.0, 5.0);
 			Character2Picked = true;
 		}
 
-		if (Keyboard::isKeyPressed(Keyboard::Num4))
+		if (Keyboard::isKeyPressed(Keyboard::Num8))
 		{
 			player2.setCharacterType(0.0, 0.0, "graphics/swordman.png", 0.0, 5.0);
 			Character2Picked = true;
