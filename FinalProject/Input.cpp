@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "SoundManager.h"
 #include "Player1.h"
 #include "Player2.h"
 
@@ -42,8 +43,8 @@ void Engine::input()
 
 	if (state == State::CharacterSelect1)
 	{
-		
-		
+
+
 		if (Keyboard::isKeyPressed(Keyboard::Num1))
 		{
 			player1.setCharacterType(0.0, 0.0, "graphics/pete.png", 0.0, 5.0);
@@ -72,7 +73,7 @@ void Engine::input()
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 		}
-		
+
 	}
 
 	if (state == State::CharacterSelect2)
@@ -106,22 +107,24 @@ void Engine::input()
 	if (Character1Picked == true && Character2Picked == true)
 	{
 		state = State::PLAYING;
-		player1.spawn(Vector2f(500, 100));
-		player2.spawn(Vector2f(500, 700));
+		player1.spawn(Vector2f(500, 500));
+		player2.spawn(Vector2f(800, 500));
 	}
 
-	/* use for sounds later 
-		if (m_Thomas.handleInput())
+	if (state == State::PLAYING)
+	{
+		if (player1.handleInput())
 		{
 			// Play a jump sound
 			m_SM.playJump();
 		}
 		// Handle input specific to Bob
-		if (m_Bob.handleInput())
+		if (player2.handleInput())
 		{
 			// Play a jump sound
 			m_SM.playJump();
 		}
-	*/
+	}
 }
+
 

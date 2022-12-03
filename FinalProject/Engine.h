@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "TextureHolder.h"
+#include "SoundManager.h"
 #include "Player1.h"
 #include "Player2.h"
 #include "MainHud.h"
@@ -19,6 +20,7 @@ private:
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
+	SoundManager m_SM;
 	RenderWindow m_Window;
 	Hud m_Hud;
 	View m_mainView;
