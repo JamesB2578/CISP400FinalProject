@@ -16,6 +16,8 @@ private:
 	Projectile P1projectile;
 	Projectile P2projectile;
 	TextureHolder th;
+	Sprite m_SelectSprite;
+	Texture m_SelectTexture;
 	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
 	State state = State::GAME_OVER;
 	bool Character1Picked = false;

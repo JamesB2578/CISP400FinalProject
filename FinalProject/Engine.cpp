@@ -2,7 +2,6 @@
 #include <iostream>
 using namespace std;
 
-
 Engine::Engine()
 {
 	// Get the screen resolution and create an SFML window and View
@@ -16,12 +15,13 @@ Engine::Engine()
 	//m_mainView.setSize(resolution);
 
 	//m_Window.setView(m_mainView);
-
+	m_SelectTexture = TextureHolder::GetTexture("graphics/characterSelect.png");
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/ArenaTwo.jpg");
+	
 
 	// Associate the sprite with the texture
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
-
+	m_SelectSprite.setTexture(m_SelectTexture);
 }
 
 void Engine::run()

@@ -24,11 +24,13 @@ void Engine::draw()
 
 	if (state == State::CharacterSelect1)
 	{
+		m_Window.draw(m_SelectSprite);
 		m_Window.draw(m_Hud.getSelectText());
 	}
 
 	if (state == State::CharacterSelect2)
 	{
+		m_Window.draw(m_SelectSprite);
 		m_Window.draw(m_Hud.getPausedText());
 	}
 
