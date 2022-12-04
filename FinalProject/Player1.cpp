@@ -1,6 +1,7 @@
 #include "Player1.h"
 #include "TextureHolder.h"
 #include <iostream>
+#include "Engine.h"
 using namespace std;
 
 PlayerOne::PlayerOne()
@@ -43,5 +44,7 @@ bool PlayerOne::handleInput()
     {
         m_RightPressed = false;
     }
+
+
     return m_JustJumped;
 }

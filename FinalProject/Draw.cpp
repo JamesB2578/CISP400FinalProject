@@ -6,9 +6,20 @@ void Engine::draw()
 
 	if (state == State::PLAYING)
 	{
+
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.draw(player1.getSprite());
 		m_Window.draw(player2.getSprite());
+		if (P1projectile.isInFlight())
+		{
+			m_Window.draw(P1projectile.getSprite());
+		}
+
+		if (P2projectile.isInFlight())
+		{
+			m_Window.draw(P2projectile.getSprite());
+		}
+
 	}
 
 	if (state == State::CharacterSelect1)

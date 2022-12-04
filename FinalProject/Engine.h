@@ -5,6 +5,7 @@
 #include "Player1.h"
 #include "Player2.h"
 #include "MainHud.h"
+#include "Projectile.h"
 using namespace sf;
 
 class Engine
@@ -12,6 +13,8 @@ class Engine
 private:
 	PlayerOne player1;
 	PlayerOne player2;
+	Projectile P1projectile;
+	Projectile P2projectile;
 	TextureHolder th;
 	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
 	State state = State::GAME_OVER;
@@ -23,7 +26,7 @@ private:
 	SoundManager m_SM;
 	RenderWindow m_Window;
 	Hud m_Hud;
-	View m_mainView;
+	//View m_mainView;
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 	Clock clock;
@@ -35,4 +38,5 @@ public:
 	// Run will call all the private functions
 	void run();
 
+	Time GetGameTimeTotal();
 };

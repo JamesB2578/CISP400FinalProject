@@ -49,6 +49,7 @@ void Engine::input()
 		{
 			player1.setCharacterType(1.0, 1.0, "graphics/pete.png", 1.0, 400);
 			Character1Picked = true;
+			P1projectile.setProjectileType(1);
 			state = State::CharacterSelect2;
 			
 		}
@@ -56,6 +57,7 @@ void Engine::input()
 		if (Keyboard::isKeyPressed(Keyboard::Num2))
 		{
 			player1.setCharacterType(1.0, 1.0, "graphics/ogre.png", 1.0, 400);
+			P1projectile.setProjectileType(2);
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 
@@ -64,6 +66,7 @@ void Engine::input()
 		if (Keyboard::isKeyPressed(Keyboard::Num3))
 		{
 			player1.setCharacterType(1.0, 1.0, "graphics/archer.png", 1.0, 400);
+			P1projectile.setProjectileType(3);
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 		}
@@ -71,6 +74,7 @@ void Engine::input()
 		if (Keyboard::isKeyPressed(Keyboard::Num4))
 		{
 			player1.setCharacterType(1.0, 1.0, "graphics/swordman.png", 1.0, 400);
+			P1projectile.setProjectileType(4);
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 		}
@@ -82,12 +86,14 @@ void Engine::input()
 		if (Keyboard::isKeyPressed(Keyboard::Num5))
 		{
 			player2.setCharacterType(1.0, 1.0, "graphics/pete.png", 1.0, 400);
+			P2projectile.setProjectileType(1);
 			Character2Picked = true;
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Num6))
 		{
 			player2.setCharacterType(1.0, 1.0, "graphics/ogre.png", 1.0, 400);
+			P2projectile.setProjectileType(2);
 			Character2Picked = true;
 
 		}
@@ -95,12 +101,14 @@ void Engine::input()
 		if (Keyboard::isKeyPressed(Keyboard::Num7))
 		{
 			player2.setCharacterType(1.0, 1.0, "graphics/archer.png", 0.0, 400);
+			P2projectile.setProjectileType(3);
 			Character2Picked = true;
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Num8))
 		{
 			player2.setCharacterType(1.0, 1.0, "graphics/swordman.png", 1.0, 400);
+			P2projectile.setProjectileType(4);
 			Character2Picked = true;
 		}
 	}
@@ -120,12 +128,26 @@ void Engine::input()
 			m_SM.playJump();
 		}
 
+		else if(Keyboard::isKeyPressed(Keyboard::RControl))
+		{
+			
+			P2projectile.launch(player2.getCenter().x, player2.getCenter().y);
+			
+		}
+
+
 		if (player1.handleInput())
 		{
 			// Play a jump sound
 			m_SM.playJump();
 		}
 
+		else if (Keyboard::isKeyPressed(Keyboard::Space))
+		{
+			
+			P1projectile.launch(player1.getCenter().x, player1.getCenter().y);
+			
+		}
 	}
 }
 
