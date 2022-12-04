@@ -15,7 +15,7 @@ Engine::Engine()
 	//m_mainView.setSize(resolution);
 
 	//m_Window.setView(m_mainView);
-	m_SelectTexture = TextureHolder::GetTexture("graphics/characterSelect.png");
+	m_SelectTexture = TextureHolder::GetTexture("graphics/selectUpdated.jpg");
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/ArenaTwo.jpg");
 	
 

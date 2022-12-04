@@ -10,7 +10,7 @@ Hud::Hud()
     m_selectText.setFont(m_Font);
     m_selectText.setCharacterSize(100);
     m_selectText.setFillColor(Color::Black);
-    m_selectText.setString("Selection Screen");
+    m_selectText.setString("Player 1: Choose a character!");
 
     FloatRect textRect1 = m_selectText.getLocalBounds();
     m_selectText.setOrigin(textRect1.left +
@@ -18,7 +18,7 @@ Hud::Hud()
         textRect1.top +
         textRect1.height / 2.0f);
     m_selectText.setPosition(
-        resolution.x / 2.0f, resolution.y / 2.0f);
+        resolution.x / 2.0f, resolution.y / 9.0f);
 
     m_endText.setFont(m_Font);
     m_endText.setCharacterSize(100);
