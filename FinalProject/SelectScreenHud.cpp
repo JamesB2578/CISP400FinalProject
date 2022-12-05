@@ -1,7 +1,6 @@
 #include "SelectScreenHud.h"
 
-void setCenter(Vector2u res, Text text, float xSclaler, float yScaler)
-{
+void setCenter(Vector2u res, Text text, float xSclaler, float yScaler){
     FloatRect textRect1 = text.getLocalBounds();
     text.setOrigin(textRect1.left +
         textRect1.width / 2.0f,
@@ -10,16 +9,14 @@ void setCenter(Vector2u res, Text text, float xSclaler, float yScaler)
     text.setPosition(
         res.x / xSclaler, res.y / yScaler);
 }
-void setTextBox(Text text, Font font, int characterSize, String words)
-{
+void setTextBox(Text text, Font font, int characterSize, String words){
     text.setFont(font);
     text.setCharacterSize(characterSize);
     text.setFillColor(Color::Black);
     text.setString(words);
 }
 
-SelectHud::SelectHud()
-{
+SelectHud::SelectHud(){
 
     Vector2u resolution;
     resolution.x = VideoMode::getDesktopMode().width;
@@ -39,7 +36,6 @@ SelectHud::SelectHud()
     setCenter(resolution, m_ArcherText, 10.0f, 6.0f);
 }
 
-Text SelectHud::getText()
-{
+Text SelectHud::getText(){
     return m_Title;
 }

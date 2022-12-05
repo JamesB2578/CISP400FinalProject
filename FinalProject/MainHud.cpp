@@ -1,6 +1,5 @@
 #include "MainHUD.h"
-Hud::Hud()
-{
+Hud::Hud(){
     Vector2u resolution;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
@@ -47,20 +46,17 @@ Hud::Hud()
         resolution.x / 2.0f, resolution.y / 2.0f);
 }
 
-Text Hud::getSelectText()
-{
+Text Hud::getSelectText(){
     return m_selectText;
 
 }
 
-Text Hud::getEndText()
-{
+Text Hud::getEndText(){
     return m_endText;
 
 }
 
-Text Hud::getPausedText()
-{
+Text Hud::getPausedText(){
     return m_pausedText;
 
 }

@@ -4,47 +4,37 @@
 #include "Engine.h"
 using namespace std;
 
-PlayerOne::PlayerOne()
-{
+PlayerOne::PlayerOne(){
 	m_JumpDuration = 0;
 }
 
-bool PlayerOne::handleInput()
-{
+bool PlayerOne::handleInput(){
     m_JustJumped = false;
-    if (Keyboard::isKeyPressed(Keyboard::W))
-    {
+    if (Keyboard::isKeyPressed(Keyboard::W)){
         // Start a jump if not already jumping
         // but only if standing on a block (not falling)
-        if (!m_IsJumping && !m_IsFalling)
-        {
+        if (!m_IsJumping && !m_IsFalling){
             m_IsJumping = true;
             m_TimeThisJump = 0;
             m_JustJumped = true;
         }
     }
-    else
-    {
+    else{
         m_IsJumping = false;
         m_IsFalling = true;
     }
-    if (Keyboard::isKeyPressed(Keyboard::A))
-    {
+    if (Keyboard::isKeyPressed(Keyboard::A)){
         m_LeftPressed = true;
     }
-    else
-    {
+    else{
         m_LeftPressed = false;
     }
-    if (Keyboard::isKeyPressed(Keyboard::D))
-    {
+    if (Keyboard::isKeyPressed(Keyboard::D)){
         m_RightPressed = true;;
     }
-    else
-    {
+    else{
         m_RightPressed = false;
     }
-
 
     return m_JustJumped;
 }

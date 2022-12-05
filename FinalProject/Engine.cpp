@@ -2,8 +2,7 @@
 #include <iostream>
 using namespace std;
 
-Engine::Engine()
-{
+Engine::Engine(){
 	// Get the screen resolution and create an SFML window and View
 	Vector2f resolution;
 	resolution.x = VideoMode::getDesktopMode().width;
@@ -24,12 +23,10 @@ Engine::Engine()
 	m_SelectSprite.setTexture(m_SelectTexture);
 }
 
-void Engine::run()
-{
+void Engine::run(){
 
 
-	while (m_Window.isOpen())
-	{
+	while (m_Window.isOpen()){
 		Time dt = clock.restart();
 		// Update the total game time
 		m_GameTimeTotal += dt;
@@ -43,7 +40,6 @@ void Engine::run()
 
 	}
 }
-Time Engine::GetGameTimeTotal()
-{
+Time Engine::GetGameTimeTotal(){
 	return m_GameTimeTotal;
 }
