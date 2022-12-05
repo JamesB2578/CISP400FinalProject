@@ -14,4 +14,6 @@ public:
     Text getSelectText();
     Text getEndText();
     Text getPausedText();
+
+
 };

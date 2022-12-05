@@ -24,8 +24,8 @@ void Engine::draw()
 
 	if (state == State::CharacterSelect1)
 	{
-		m_Window.draw(m_SelectSprite);
-		m_Window.draw(m_Hud.getSelectText());
+		//m_Window.draw(m_SelectSprite);
+		m_Window.draw(m_SelectHud.getText());
 	}
 
 	if (state == State::CharacterSelect2)

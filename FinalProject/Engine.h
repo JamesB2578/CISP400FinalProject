@@ -6,6 +6,7 @@
 #include "Player2.h"
 #include "MainHud.h"
 #include "Projectile.h"
+#include "SelectScreenHud.h"
 using namespace sf;
 
 class Engine
@@ -17,6 +18,7 @@ private:
 	Projectile P2projectile;
 	TextureHolder th;
 	Sprite m_SelectSprite;
+	SelectHud m_SelectHud;
 	Texture m_SelectTexture;
 	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
 	State state = State::GAME_OVER;
