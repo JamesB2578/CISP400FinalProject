@@ -31,9 +31,6 @@ void PlayerOne::setCharacterType(int type)
 		m_health = 350;
 		m_Speed = 750.0;
 		break;
-
-
-
 	case 4:
 		m_Gravity = 500.0;
 		m_JumpDuration = 0.25;

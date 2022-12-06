@@ -11,50 +11,6 @@ void PlayableCharacter::spawn(Vector2f startPosition) {
     m_Sprite.setPosition(m_Position);
 }
 
-void PlayableCharacter::update(float elapsedTime) {
-    if (m_RightPressed) {
-        m_Position.x += m_Speed * elapsedTime;
-    }
-    if (m_LeftPressed) {
-        m_Position.x -= m_Speed * elapsedTime;
-        cout << m_Position.x << endl;
-    }
-    // Handle Jumping
-    if (m_IsJumping) {
-        // Update how long the jump has been going
-        m_TimeThisJump += elapsedTime;
-        // Is the jump going upwards
-        if (m_TimeThisJump < m_JumpDuration) {
-            // Move up at twice gravity
-            m_Position.y -= m_Gravity * 2 * elapsedTime;
-        }
-        else {
-            m_IsJumping = false;
-            m_IsFalling = true;
-        }
-    }
-    // Apply gravity
-    if (m_IsFalling) {
-        m_Position.y += m_Gravity * elapsedTime;
-    }
-
-    m_Sprite.setPosition(m_Position);
-}
-
-FloatRect PlayableCharacter::getPosition() {
-    return m_Sprite.getGlobalBounds();
-}
-
-FloatRect PlayableCharacter::getLeft() {
-    return m_Left;
-}
-FloatRect PlayableCharacter::getRight() {
-    return m_Right;
-}
-Sprite PlayableCharacter::getSprite() {
-    return m_Sprite;
-}
-
 void PlayableCharacter::stopFalling(float position) {
     if (!m_IsJumping)  ///***prevent interrupting jump if touching floor
     {
@@ -77,34 +33,3 @@ void PlayableCharacter::stopJump() {
     m_IsFalling = true;
 }
 
-Vector2f PlayableCharacter::getCenter() {
-    return Vector2f(
-        m_Position.x + m_Sprite.getGlobalBounds().width / 2,
-        m_Position.y + m_Sprite.getGlobalBounds().height / 2
-    );
-}
-
-void PlayableCharacter::setPosition(Vector2f pos)
-{
-    m_Position = pos;
-    m_Sprite.setPosition(m_Position);
-}
-
-void PlayableCharacter::SetCharacterName(String name)
-{
-    m_CharacterTypeName = name;
-}
-String PlayableCharacter::getCharacterName()
-{
-    return m_CharacterTypeName;
-}
-
-float PlayableCharacter::getHealth()
-{
-    return m_health;
-}
-
-void PlayableCharacter::setHealth(float health)
-{
-    m_health = health;
-}

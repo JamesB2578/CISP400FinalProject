@@ -3,21 +3,15 @@
 
 PlayerOne::PlayerOne()
 {
-	// Associate a texture with the sprite
-
 	m_JumpDuration = .25;
 }
 
-// A virtual function
 bool PlayerOne::handleInput()
 {
 	m_JustJumped = false;
 
 	if (Keyboard::isKeyPressed(Keyboard::W))
 	{
-
-		// Start a jump if not already jumping
-		// but only if standing on a block (not falling)
 		if (!m_IsJumping && !m_IsFalling)
 		{
 			m_IsJumping = true;
@@ -39,8 +33,6 @@ bool PlayerOne::handleInput()
 	{
 		m_LeftPressed = false;
 	}
-
-
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
 		m_RightPressed = true;
@@ -49,6 +41,5 @@ bool PlayerOne::handleInput()
 	{
 		m_RightPressed = false;
 	}
-
 	return m_JustJumped;
 }

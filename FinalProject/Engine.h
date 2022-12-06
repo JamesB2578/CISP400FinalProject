@@ -10,7 +10,6 @@
 #include "SelectScreenHud.h"
 #include "EndHud.h"
 using namespace sf;
-
 class Engine
 {
 private:
@@ -27,7 +26,6 @@ private:
 	SelectHud m_SelectHud1;
 	Texture m_SelectTexture, m_BackgroundTexture, m_EndTexture;
 	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
-	const int GRAVITY = 300;
 	State state = State::CharacterSelect1;
 	bool Character1Picked = false;
 	bool Character2Picked = false;
@@ -38,6 +36,9 @@ private:
 	RenderWindow m_Window;
 	Hud m_Hud;
 	Clock clock;
+	void InputPollEvent(), InputCharacterSelect1(), InputCharacterSelect2(), HandleMovement();
+	void drawPlaying(), drawCharacterSelect();
+	//void
 	void detectWallCollisions(PlayableCharacter& character, RenderWindow& window);
 	bool detectProjectileCollisions(PlayableCharacter& character, Projectile& projectile);
 	Time m_GameTimeTotal;

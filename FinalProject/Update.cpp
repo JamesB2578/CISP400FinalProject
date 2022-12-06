@@ -13,7 +13,6 @@ void Engine::update(float dtAsSeconds)
 		m_Playing = true;
 		state = State::PLAYING;
 	}
-
 	if (state == State::PLAYING && m_Playing == true)
 	{
 		player1.update(dtAsSeconds);
@@ -30,7 +29,6 @@ void Engine::update(float dtAsSeconds)
 			m_Playing = false;
 			state = State::GAME_OVER;
 		}
-
 		else if (detectProjectileCollisions(player1, P2projectile) && m_Playing == true)
 		{
 			m_EndHud.setWinnerText("PLAYER 2 WINS!");
@@ -39,7 +37,6 @@ void Engine::update(float dtAsSeconds)
 			m_Playing = false;
 			state = State::GAME_OVER;
 		}
-		
 	}
 		m_FramesSinceLastHUDUpdate++;
 	if (m_FramesSinceLastHUDUpdate > m_TargetFramesPerHUDUpdate)

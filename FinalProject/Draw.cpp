@@ -4,48 +4,9 @@ void Engine::draw()
 {
 	m_Window.clear(Color::Cyan);
 
-	if (state == State::PLAYING)
-	{
+	drawPlaying();
 
-		m_Window.draw(m_BackgroundSprite);
-		m_Window.draw(player1.getSprite());
-		m_Window.draw(player2.getSprite());
-		m_Window.draw(m_Hud.getP1HealthBar());
-		m_Window.draw(m_Hud.getP2HealthBar());
-		m_Window.draw(m_Hud.getP1NameText());
-		m_Window.draw(m_Hud.getP2NameText());
-		if (P1projectile.isInFlight())
-		{
-			m_Window.draw(P1projectile.getSprite());
-		}
-
-		if (P2projectile.isInFlight())
-		{
-			m_Window.draw(P2projectile.getSprite());
-		}
-
-	}
-
-	if (state == State::CharacterSelect1)
-	{
-		m_Window.draw(m_SelectSprite);
-		m_Window.draw(m_SelectHud1.getTitle1Text());
-		m_Window.draw(m_SelectHud1.getOgreText());
-		m_Window.draw(m_SelectHud1.getArcherText());
-		m_Window.draw(m_SelectHud1.getPeteText());
-		m_Window.draw(m_SelectHud1.getSwordmanText());
-
-	}
-
-	if (state == State::CharacterSelect2)
-	{
-		m_Window.draw(m_SelectSprite);
-		m_Window.draw(m_SelectHud1.getTitle2Text());
-		m_Window.draw(m_SelectHud1.getOgreText());
-		m_Window.draw(m_SelectHud1.getArcherText());
-		m_Window.draw(m_SelectHud1.getPeteText());
-		m_Window.draw(m_SelectHud1.getSwordmanText());
-	}
+	drawCharacterSelect();
 
 	if (state == State::PAUSED)
 	{
@@ -59,16 +20,12 @@ void Engine::draw()
 	if (state == State::GAME_OVER)
 	{
 		m_Window.draw(m_EndSprite);
-
 		m_Window.draw(m_EndHud.getWinnerText());
 		player1.setPosition(Vector2f(820, 311));
 		player2.setPosition(Vector2f(1050, 450));
-
-		
 		m_Window.draw(player1.getSprite());
 		m_Window.draw(player2.getSprite());
 		m_Window.draw(m_EndHud.getPlayAgainText());
 	}
-
 	m_Window.display();
 }

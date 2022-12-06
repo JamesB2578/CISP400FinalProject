@@ -36,10 +36,7 @@ void PlayerTwoProjectile::setProjectileType(int type)
 		m_damage = 1000;
 		break;
 	}
-
-	
 }
-
 void PlayerTwoProjectile::update(float elapsedTime) {
 	m_Position.x -= m_ProjectileSpeed * elapsedTime;
 	m_Sprite.setPosition(m_Position);
