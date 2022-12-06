@@ -24,12 +24,16 @@ void Engine::input()
 			// Handle the player starting the game
 			if (event.key.code == Keyboard::Return && state == State::PLAYING)
 			{
+				m_Playing = false;
+				m_SM.playSelect();
 				state = State::PAUSED;
 			}
 
 			else if (event.key.code == Keyboard::Return && state == State::PAUSED)
 			{
+				m_SM.playSelect();
 				state = State::PLAYING;
+				m_Playing = true;
 				clock.restart();
 			}
 
@@ -37,6 +41,8 @@ void Engine::input()
 			{
 				Character1Picked = false;
 				Character2Picked = false;
+				m_Playing = false;
+				m_SM.playSelect();
 				state = State::CharacterSelect1;
 
 			}
@@ -53,6 +59,7 @@ void Engine::input()
 			player1.setCharacterType(1);
 			Character1Picked = true;
 			P1projectile.setProjectileType(1);
+			m_SM.playSelect();
 			state = State::CharacterSelect2;
 
 		}
@@ -62,6 +69,7 @@ void Engine::input()
 			player1.setCharacterType(3);
 			P1projectile.setProjectileType(3);
 			state = State::CharacterSelect2;
+			m_SM.playSelect();
 			Character1Picked = true;
 
 		}
@@ -71,6 +79,7 @@ void Engine::input()
 			player1.setCharacterType(2);
 			P1projectile.setProjectileType(2);
 			state = State::CharacterSelect2;
+			m_SM.playSelect();
 			Character1Picked = true;
 		}
 
@@ -79,6 +88,7 @@ void Engine::input()
 			player1.setCharacterType(4);
 			P1projectile.setProjectileType(4);
 			state = State::CharacterSelect2;
+			m_SM.playSelect();
 			Character1Picked = true;
 		}
 
@@ -90,6 +100,7 @@ void Engine::input()
 		{
 			player2.setCharacterType(1);
 			P2projectile.setProjectileType(1);
+			m_SM.playSelect();
 			Character2Picked = true;
 		}
 
@@ -97,6 +108,7 @@ void Engine::input()
 		{
 			player2.setCharacterType(2);
 			P2projectile.setProjectileType(2);
+			m_SM.playSelect();
 			Character2Picked = true;
 
 		}
@@ -105,6 +117,7 @@ void Engine::input()
 		{
 			player2.setCharacterType(3);
 			P2projectile.setProjectileType(3);
+			m_SM.playSelect();
 			Character2Picked = true;
 		}
 
@@ -112,6 +125,7 @@ void Engine::input()
 		{
 			player2.setCharacterType(4);
 			P2projectile.setProjectileType(4);
+			m_SM.playSelect();
 			Character2Picked = true;
 		}
 	}
@@ -126,6 +140,7 @@ void Engine::input()
 		{
 
 			P1projectile.launch(player1.getCenter().x, player1.getCenter().y);
+			m_SM.playThrow();
 
 		}
 
@@ -137,9 +152,8 @@ void Engine::input()
 
 		else if (P2projectile.handleInput() && P2projectile.isInFlight() == false)
 		{
-
 			P2projectile.launch(player2.getCenter().x, player2.getCenter().y);
-
+			m_SM.playThrow();
 		}
 	
 }

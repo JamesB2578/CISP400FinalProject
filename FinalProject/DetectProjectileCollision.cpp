@@ -9,7 +9,6 @@ bool Engine::detectProjectileCollisions(PlayableCharacter& character, Projectile
 	if (projectile.getPosition().intersects(character.getPosition()))
 	{
 
-		cout << "hit" << endl;
 		dead = true;
 		
 
