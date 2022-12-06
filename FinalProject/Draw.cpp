@@ -25,7 +25,7 @@ void Engine::draw()
 		player2.setPosition(Vector2f(1050, 450));
 		m_Window.draw(player1.getSprite());
 		m_Window.draw(player2.getSprite());
-		m_Window.draw(m_EndHud.getPlayAgainText());
+		//m_Window.draw(m_EndHud.getPlayAgainText());
 	}
 	m_Window.display();
 }
