@@ -1,41 +1,68 @@
 #include "SelectScreenHud.h"
 
-void setCenter(Vector2u res, Text text, float xSclaler, float yScaler){
+void SelectHud::setCenter(Text& text, float xScaler, float yScaler)
+{
     FloatRect textRect1 = text.getLocalBounds();
     text.setOrigin(textRect1.left +
         textRect1.width / 2.0f,
         textRect1.top +
         textRect1.height / 2.0f);
     text.setPosition(
-        res.x / xSclaler, res.y / yScaler);
+        resolution.x / xScaler, resolution.y / yScaler);
 }
-void setTextBox(Text text, Font font, int characterSize, String words){
-    text.setFont(font);
-    text.setCharacterSize(characterSize);
+void SelectHud::setTextBox(Text& text, String words)
+{
+    text.setFont(m_Font);
+    text.setCharacterSize(100);
     text.setFillColor(Color::Black);
     text.setString(words);
 }
 
-SelectHud::SelectHud(){
-
-    Vector2u resolution;
+SelectHud::SelectHud()
+{
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
-
     m_Font.loadFromFile("fonts/font.ttf");
-
-    setTextBox(m_Title, m_Font, 100, "Player 1: Choose a character!");
-    setCenter(resolution, m_Title, 2.0, 9.0);
-    setTextBox(m_PeteText, m_Font, 100, "Pete");
-    setCenter(resolution, m_PeteText, 4.0f, 6.0f);
-    setTextBox(m_OgreText, m_Font, 100, "Clopsy");
-    setCenter(resolution, m_OgreText, 6.0f, 6.0f);
-    setTextBox(m_SwordmanText, m_Font, 100, "Legend");
-    setCenter(resolution, m_SwordmanText, 8.0f, 6.0f);
-    setTextBox(m_ArcherText, m_Font, 100, "Kyle");
-    setCenter(resolution, m_ArcherText, 10.0f, 6.0f);
+    setTextBox(m_Title1, "Player One: Choose Your Character!");
+    setCenter(m_Title1, 2.0f, 9.0f);
+    setTextBox(m_Title2, "Player Two: Choose Your Character!");
+    setCenter(m_Title2, 2.0f, 9.0f);
+    setTextBox(m_PeteText, "Pete");
+    setCenter(m_PeteText, 21.0f, 1.25f);
+    setTextBox(m_ArcherText, "Kyle");
+    setCenter(m_ArcherText, 2.8f, 1.25f);
+    setTextBox(m_OgreText, "Clopsy");
+    setCenter(m_OgreText, 2.0f, 1.25f);
+    setTextBox(m_SwordmanText, "Legend");
+    setCenter(m_SwordmanText, 1.25f, 1.25f);
 }
 
-Text SelectHud::getText(){
-    return m_Title;
+Text SelectHud::getTitle1Text()
+{
+    return m_Title1;
+}
+
+Text SelectHud::getOgreText()
+{
+    return m_OgreText;
+}
+
+Text SelectHud::getPeteText()
+{
+    return m_PeteText;
+}
+
+Text SelectHud::getSwordmanText()
+{
+    return m_SwordmanText;
+}
+
+Text SelectHud::getArcherText()
+{
+    return m_ArcherText;
+}
+
+Text SelectHud::getTitle2Text()
+{
+    return m_Title2;
 }
