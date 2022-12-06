@@ -16,11 +16,13 @@ Engine::Engine(){
 	//m_Window.setView(m_mainView);
 	m_SelectTexture = TextureHolder::GetTexture("graphics/selectUpdated.jpg");
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/ArenaTwo.jpg");
+	m_EndTexture = TextureHolder::GetTexture("graphics/podium2.png");
 	
 
 	// Associate the sprite with the texture
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
 	m_SelectSprite.setTexture(m_SelectTexture);
+	m_EndSprite.setTexture(m_EndTexture);
 }
 
 void Engine::run(){

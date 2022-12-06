@@ -1,28 +1,8 @@
 #include "SelectScreenHud.h"
 
-void SelectHud::setCenter(Text& text, float xScaler, float yScaler)
-{
-    FloatRect textRect1 = text.getLocalBounds();
-    text.setOrigin(textRect1.left +
-        textRect1.width / 2.0f,
-        textRect1.top +
-        textRect1.height / 2.0f);
-    text.setPosition(
-        resolution.x / xScaler, resolution.y / yScaler);
-}
-void SelectHud::setTextBox(Text& text, String words)
-{
-    text.setFont(m_Font);
-    text.setCharacterSize(100);
-    text.setFillColor(Color::Black);
-    text.setString(words);
-}
-
 SelectHud::SelectHud()
 {
-    resolution.x = VideoMode::getDesktopMode().width;
-    resolution.y = VideoMode::getDesktopMode().height;
-    m_Font.loadFromFile("fonts/font.ttf");
+
     setTextBox(m_Title1, "Player One: Choose Your Character!");
     setCenter(m_Title1, 2.0f, 9.0f);
     setTextBox(m_Title2, "Player Two: Choose Your Character!");

@@ -84,10 +84,7 @@ Vector2f PlayableCharacter::getCenter() {
     );
 }
 
-void PlayableCharacter::setCharacterType(float gravity, float jumpDuration, String sprite, float health, float speed) {
-    m_Gravity = gravity;
-    m_JumpDuration = jumpDuration;
-    m_Sprite = Sprite(TextureHolder::GetTexture(sprite));
-    m_health = health;
-    m_Speed = speed;
+void PlayableCharacter::setPosition(Vector2f pos)
+{
+    m_Position = pos;
 }

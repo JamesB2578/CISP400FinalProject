@@ -3,21 +3,16 @@
 
 PlayerTwo::PlayerTwo()
 {
-	// Associate a texture with the sprite
 
 	m_JumpDuration = .45;
 }
 
-// A virtual function
 bool PlayerTwo::handleInput()
 {
 	m_JustJumped = false;
 
 	if (Keyboard::isKeyPressed(Keyboard::Up))
 	{
-
-		// Start a jump if not already jumping
-		// but only if standing on a block (not falling)
 		if (!m_IsJumping && !m_IsFalling)
 		{
 			m_IsJumping = true;

@@ -1,12 +1,9 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <string>
+#include "ParentHud.h"
 using namespace sf;
-class SelectHud
+class SelectHud: public ParentHud
 {
 private:
-    Vector2u resolution;
-    Font m_Font;
     Text m_PeteText;
     Text m_ArcherText;
     Text m_SwordmanText;
@@ -23,7 +20,6 @@ public:
     Text getPeteText();
     Text getSwordmanText();
     Text getArcherText();
-    void setCenter(Text& text, float xScaler, float yScaler);
-    void setTextBox(Text& text, String words);
+
 
 };

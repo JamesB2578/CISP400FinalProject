@@ -21,6 +21,7 @@ protected:
 	FloatRect m_Left;
 	float m_health;
 public:
+	void setPosition(Vector2f pos);
 	void spawn(Vector2f startPosition);
 	bool virtual handleInput() = 0;
 	FloatRect getPosition();
@@ -32,7 +33,7 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 	Vector2f getCenter();
-	void setCharacterType(float gravity, float jumpDuration, String sprite, float health, float speed);
+	void virtual setCharacterType(float gravity, float jumpDuration, String sprite, float health, float speed) = 0;
 	void update(float elapsedTime);
 
 };

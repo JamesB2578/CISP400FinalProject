@@ -19,6 +19,11 @@ void Engine::update(float dtAsSeconds)
 		player2.update(dtAsSeconds);
 		detectWallCollisions(player1, m_Window);
 		P1projectile.update(dtAsSeconds);
-		//P2projectile.update(dtAsSeconds);
+		P2projectile.update(dtAsSeconds);
+		if (detectProjectileCollisions(player2, P1projectile))
+		{
+			state = State::GAME_OVER;
+		}
+		
 	}
 }
