@@ -16,6 +16,8 @@ class Engine
 private:
 	EndHud m_EndHud;
 	bool P1_wins = true;
+	int m_FramesSinceLastHUDUpdate = 0;
+	int m_TargetFramesPerHUDUpdate = 10;
 	PlayerOne player1;
 	PlayerTwo player2;
 	PlayerOneProjectile P1projectile;

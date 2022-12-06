@@ -1,12 +1,12 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "Projectile.h"
 using namespace sf;
 class PlayableCharacter
 {
 protected:
 	Sprite m_Sprite;
+	String m_CharacterTypeName;
 	float m_JumpDuration;
 	bool m_IsJumping;
 	bool m_IsFalling;
@@ -24,6 +24,8 @@ public:
 	void setPosition(Vector2f pos);
 	void spawn(Vector2f startPosition);
 	bool virtual handleInput() = 0;
+	void SetCharacterName(String name);
+	String getCharacterName();
 	FloatRect getPosition();
 	FloatRect getRight();
 	FloatRect getLeft();
@@ -33,8 +35,9 @@ public:
 	void stopLeft(float position);
 	void stopJump();
 	Vector2f getCenter();
-	void virtual setCharacterType(float gravity, float jumpDuration, String sprite, float health, float speed) = 0;
+	void virtual setCharacterType(int type) = 0;
 	void update(float elapsedTime);
+	float getHealth();
 
 };
 

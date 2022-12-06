@@ -88,3 +88,17 @@ void PlayableCharacter::setPosition(Vector2f pos)
 {
     m_Position = pos;
 }
+
+void PlayableCharacter::SetCharacterName(String name)
+{
+    m_CharacterTypeName = name;
+}
+String PlayableCharacter::getCharacterName()
+{
+    return m_CharacterTypeName;
+}
+
+float PlayableCharacter::getHealth()
+{
+    return m_health;
+}

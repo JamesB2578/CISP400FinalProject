@@ -1,11 +1,40 @@
 #include "Player1.h"
 #include "TextureHolder.h"
 
-void PlayerOne::setCharacterType(float gravity, float jumpDuration, String sprite, float health, float speed)
+void PlayerOne::setCharacterType(int type)
 {
-    m_Gravity = gravity;
-    m_JumpDuration = jumpDuration;
-    m_Sprite = Sprite(TextureHolder::GetTexture(sprite));
-    m_health = health;
-    m_Speed = speed;
+	switch (type)
+	{
+	case 1:
+		m_Gravity = 500.0;
+		m_JumpDuration = 0.5;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/pete.png"));
+		m_health = 400.0;
+		m_Speed = 1000.0;
+		break;
+
+	case 2:
+		m_Gravity = 500.0;
+		m_JumpDuration = 0.5;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/ogre.png"));
+		m_health = 400.0;
+		m_Speed = 1000.0;
+		break;
+
+	case 3:
+		m_Gravity = 500.0;
+		m_JumpDuration = 0.5;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/archer.png"));
+		m_health = 400.0;
+		m_Speed = 1000.0;
+		break;
+
+	case 4:
+		m_Gravity = 500.0;
+		m_JumpDuration = 0.5;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/swordman.png"));
+		m_health = 400.0;
+		m_Speed = 1000.0;
+		break;
+	}
 }

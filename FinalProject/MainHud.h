@@ -1,19 +1,24 @@
 #pragma once
-#include <SFML/Graphics.hpp>
+#include "ParentHud.h"
 using namespace sf;
-class Hud
+class Hud: public ParentHud
 {
 private:
-    Font m_Font;
-    Text m_selectText;
-    Text m_endText;
-    Text m_pausedText;
+    RectangleShape p1_healthBar;
+    RectangleShape p2_healthBar;
+    Text p1_Name;
+    Text p2_Name;
+    Text paused;
 
 public:
     Hud();
-    Text getSelectText();
-    Text getEndText();
+    void setP1Name(String text);
+    void setP2Name(String text);
+    void setP1HealthBar(float health);
+    void setP2HealthBar(float health);
+    RectangleShape getP1HealthBar();
+    RectangleShape getP2HealthBar();
+    Text getP1NameText();
+    Text getP2NameText();
     Text getPausedText();
-
-
 };

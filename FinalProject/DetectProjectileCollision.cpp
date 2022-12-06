@@ -2,11 +2,11 @@
 
 bool Engine::detectProjectileCollisions(PlayableCharacter& character, Projectile& projectile)
 {
-	bool P1_winner = false;
+	bool Hit = false;
 	if (projectile.getPosition().intersects(character.getPosition()))
 	{
-		P1_winner = true;
+		Hit = true;
 	}
 
-	return P1_winner;
+	return Hit;
 }

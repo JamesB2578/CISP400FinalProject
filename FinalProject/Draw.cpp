@@ -2,7 +2,7 @@
 
 void Engine::draw()
 {
-	m_Window.clear(Color::Black);
+	m_Window.clear(Color::Cyan);
 
 	if (state == State::PLAYING)
 	{
@@ -10,6 +10,10 @@ void Engine::draw()
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.draw(player1.getSprite());
 		m_Window.draw(player2.getSprite());
+		m_Window.draw(m_Hud.getP1HealthBar());
+		m_Window.draw(m_Hud.getP2HealthBar());
+		m_Window.draw(m_Hud.getP1NameText());
+		m_Window.draw(m_Hud.getP2NameText());
 		if (P1projectile.isInFlight())
 		{
 			m_Window.draw(P1projectile.getSprite());
@@ -46,6 +50,12 @@ void Engine::draw()
 	if (state == State::PAUSED)
 	{
 		m_Window.draw(m_Hud.getPausedText());
+		m_Window.draw(player1.getSprite());
+		m_Window.draw(player2.getSprite());
+		m_Window.draw(m_Hud.getP1HealthBar());
+		m_Window.draw(m_Hud.getP2HealthBar());
+		m_Window.draw(m_Hud.getP1NameText());
+		m_Window.draw(m_Hud.getP2NameText());
 	}
 
 	if (state == State::GAME_OVER)

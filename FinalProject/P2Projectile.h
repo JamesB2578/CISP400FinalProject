@@ -7,4 +7,5 @@ class PlayerTwoProjectile : public Projectile
 public:
 	bool virtual handleInput();
 	void virtual setProjectileType(int type);
+	void virtual update(float elapsedTime);
 };

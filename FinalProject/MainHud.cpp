@@ -1,62 +1,47 @@
 #include "MainHUD.h"
-Hud::Hud(){
-    Vector2u resolution;
-    resolution.x = VideoMode::getDesktopMode().width;
-    resolution.y = VideoMode::getDesktopMode().height;
-
-    m_Font.loadFromFile("fonts/font.ttf");
-
-    m_selectText.setFont(m_Font);
-    m_selectText.setCharacterSize(100);
-    m_selectText.setFillColor(Color::Black);
-    m_selectText.setString("Player 1: Choose a character!");
-
-    FloatRect textRect1 = m_selectText.getLocalBounds();
-    m_selectText.setOrigin(textRect1.left +
-        textRect1.width / 2.0f,
-        textRect1.top +
-        textRect1.height / 2.0f);
-    m_selectText.setPosition(
-        resolution.x / 2.0f, resolution.y / 9.0f);
-
-    m_endText.setFont(m_Font);
-    m_endText.setCharacterSize(100);
-    m_endText.setFillColor(Color::Black);
-    m_endText.setString("End");
-
-    FloatRect textRect2 = m_endText.getLocalBounds();
-    m_endText.setOrigin(textRect2.left +
-        textRect2.width / 2.0f,
-        textRect2.top +
-        textRect2.height / 2.0f);
-    m_endText.setPosition(
-        resolution.x / 2.0f, resolution.y / 2.0f);
-
-    m_pausedText.setFont(m_Font);
-    m_pausedText.setCharacterSize(100);
-    m_pausedText.setFillColor(Color::Black);
-    m_pausedText.setString("Select 2");
-
-    FloatRect textRect3 = m_pausedText.getLocalBounds();
-    m_pausedText.setOrigin(textRect3.left +
-        textRect3.width / 2.0f,
-        textRect3.top +
-        textRect3.height / 2.0f);
-    m_pausedText.setPosition(
-        resolution.x / 2.0f, resolution.y / 2.0f);
+Hud::Hud()
+{
+    p1_healthBar.setFillColor(Color::Red);
+    p1_healthBar.setPosition(30, 30);
+    p2_healthBar.setFillColor(Color::White);
+    p2_healthBar.setPosition(450, 980);
+    setTextBox(paused, "PAUSED: Press Return To Continue");
+    setCenter(paused, 2.0f, 2.0f);
+    setTextBox(p1_Name, "AAAAAAAAAAAA");
+    setCenter(p1_Name, 2.0f, 2.0f);
+    setTextBox(p2_Name, "f");
+    setCenter(p2_Name, 2.0f, 9.0f);
 }
-
-Text Hud::getSelectText(){
-    return m_selectText;
-
+Text Hud::getP1NameText(){
+    return p1_Name;
 }
-
-Text Hud::getEndText(){
-    return m_endText;
-
+Text Hud::getP2NameText(){
+    return p2_Name;
 }
-
 Text Hud::getPausedText(){
-    return m_pausedText;
-
+    return paused;
+}
+RectangleShape Hud::getP1HealthBar()
+{
+    return p1_healthBar;
+}
+RectangleShape Hud::getP2HealthBar()
+{
+    return p2_healthBar;
+}
+void Hud::setP1HealthBar(float health)
+{
+    p1_healthBar.setSize(Vector2f(health * 1.1, 50));
+}
+void Hud::setP2HealthBar(float health)
+{
+    p2_healthBar.setSize(Vector2f(health * 1.1, 50));
+}
+void Hud::setP1Name(String text)
+{
+    p1_Name.setString(text);
+}
+void Hud::setP2Name(String text)
+{
+    p2_Name.setString(text);
 }
