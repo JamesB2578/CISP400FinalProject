@@ -60,10 +60,10 @@ void Engine::draw()
 
 	if (state == State::GAME_OVER)
 	{
-		player1.setPosition(Vector2f(960, 540));
-		player2.setPosition(Vector2f(1000, 540));
 		m_Window.draw(m_EndSprite);
 		m_Window.draw(m_EndHud.getWinnerText());
+		player1.setPosition(Vector2f(960, 300));
+		player2.setPosition(Vector2f(0, 0));
 		m_Window.draw(player1.getSprite());
 		m_Window.draw(player2.getSprite());
 		m_Window.draw(m_EndHud.getPlayAgainText());

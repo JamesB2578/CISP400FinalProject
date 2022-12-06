@@ -12,8 +12,8 @@ private:
 
 public:
     Hud();
-    void setP1Name(String text);
-    void setP2Name(String text);
+    void setP1Name(String text1);
+    void setP2Name(String text2);
     void setP1HealthBar(float health);
     void setP2HealthBar(float health);
     RectangleShape getP1HealthBar();

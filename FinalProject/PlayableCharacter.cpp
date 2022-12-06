@@ -87,6 +87,7 @@ Vector2f PlayableCharacter::getCenter() {
 void PlayableCharacter::setPosition(Vector2f pos)
 {
     m_Position = pos;
+    m_Sprite.setPosition(m_Position);
 }
 
 void PlayableCharacter::SetCharacterName(String name)

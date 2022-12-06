@@ -12,9 +12,9 @@ SelectHud::SelectHud()
     setTextBox(m_ArcherText, "Kyle");
     setCenter(m_ArcherText, 2.8f, 1.25f);
     setTextBox(m_OgreText, "Clopsy");
-    setCenter(m_OgreText, 2.0f, 1.25f);
+    setCenter(m_OgreText, 1.52f, 1.25f);
     setTextBox(m_SwordmanText, "Legend");
-    setCenter(m_SwordmanText, 1.25f, 1.25f);
+    setCenter(m_SwordmanText, 1.07f, 1.25f);
 }
 
 Text SelectHud::getTitle1Text()

@@ -27,8 +27,6 @@ void Engine::update(float dtAsSeconds)
 			P1projectile.stop();
 			P2projectile.stop();
 			state = State::GAME_OVER;
-
-
 		}
 		
 	}
@@ -40,5 +38,4 @@ void Engine::update(float dtAsSeconds)
 		m_Hud.setP1HealthBar(player1.getHealth());
 		m_Hud.setP2HealthBar(player2.getHealth());
 	}
-	
 }
