@@ -1,4 +1,4 @@
-#include "MainHUD.h"
+#include "MainHud.h"
 Hud::Hud()
 {
     p1_healthBar.setFillColor(Color::Red);
