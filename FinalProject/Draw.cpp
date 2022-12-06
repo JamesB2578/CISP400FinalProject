@@ -2,7 +2,7 @@
 
 void Engine::draw()
 {
-	m_Window.clear(Color::White);
+	m_Window.clear(Color::Black);
 
 	if (state == State::PLAYING)
 	{
@@ -30,7 +30,6 @@ void Engine::draw()
 		m_Window.draw(m_SelectHud1.getArcherText());
 		m_Window.draw(m_SelectHud1.getPeteText());
 		m_Window.draw(m_SelectHud1.getSwordmanText());
-		\
 
 	}
 

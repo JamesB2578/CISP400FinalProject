@@ -51,7 +51,7 @@ void Engine::input()
 			Character1Picked = true;
 			P1projectile.setProjectileType(1);
 			state = State::CharacterSelect2;
-			
+
 		}
 
 		if (Keyboard::isKeyPressed(Keyboard::Num3))
@@ -116,24 +116,15 @@ void Engine::input()
 	if (Character1Picked == true && Character2Picked == true)
 	{
 		state = State::PLAYING;
-		player1.spawn(Vector2f(480, 500));
-		player2.spawn(Vector2f(1440, 500));
+		//player1.spawn(Vector2f(480, 500));
+		//player2.spawn(Vector2f(1440, 500));
 	}
 
-	if (state == State::PLAYING)
-	{
-		if (player2.handleInput())
-		{
-			// Play a jump sound
-			m_SM.playJump();
-		}
 
-		else if(Keyboard::isKeyPressed(Keyboard::RControl))
-		{
-			
-			P2projectile.launch(player2.getCenter().x, player2.getCenter().y);
-			
-		}
+	
+
+		
+
 
 
 		if (player1.handleInput())
@@ -144,11 +135,24 @@ void Engine::input()
 
 		else if (Keyboard::isKeyPressed(Keyboard::Space))
 		{
-			
+
 			P1projectile.launch(player1.getCenter().x, player1.getCenter().y);
-			
+
 		}
-	}
+
+		if (player2.handleInput())
+		{
+			// Play a jump sound
+			m_SM.playJump();
+		}
+
+		else if (Keyboard::isKeyPressed(Keyboard::RControl))
+		{
+
+			P2projectile.launch(player2.getCenter().x, player2.getCenter().y);
+
+		}
+	
 }
 
 

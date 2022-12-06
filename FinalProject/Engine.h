@@ -13,7 +13,7 @@ class Engine
 {
 private:
 	PlayerOne player1;
-	PlayerOne player2;
+	PlayerTwo player2;
 	Projectile P1projectile;
 	Projectile P2projectile;
 	TextureHolder th;
@@ -21,6 +21,7 @@ private:
 	SelectHud m_SelectHud1;
 	Texture m_SelectTexture;
 	enum class State { PAUSED, CharacterSelect1, CharacterSelect2, GAME_OVER, PLAYING };
+	const int GRAVITY = 300;
 	State state = State::GAME_OVER;
 	bool Character1Picked = false;
 	bool Character2Picked = false;
@@ -34,6 +35,8 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 	Clock clock;
+	//bool detectWallCollisions(PlayableCharacter& character);
+	//bool detectProjectileCollisions(PlayableCharacter& character, Projectile& projectile);
 	Time m_GameTimeTotal;
 public:
 	// The Engine constructor

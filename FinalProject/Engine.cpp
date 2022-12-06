@@ -25,6 +25,7 @@ Engine::Engine(){
 
 void Engine::run(){
 
+	//Clock clock;
 
 	while (m_Window.isOpen()){
 		Time dt = clock.restart();
@@ -32,7 +33,6 @@ void Engine::run(){
 		m_GameTimeTotal += dt;
 		// Make a decimal fraction from the delta time
 		float dtAsSeconds = dt.asSeconds();
-		
 
 		input();
 		update(dtAsSeconds);

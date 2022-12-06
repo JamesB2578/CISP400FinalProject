@@ -3,7 +3,7 @@
 class PlayerOne : public PlayableCharacter
 {
 public: 
-	PlayerOne();
+	PlayerOne::PlayerOne();
 	bool virtual handleInput();
 };
 
