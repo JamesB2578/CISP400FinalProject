@@ -17,7 +17,8 @@ void Engine::update(float dtAsSeconds)
 	{
 		player1.update(dtAsSeconds);
 		player2.update(dtAsSeconds);
-		//P1projectile.update(dtAsSeconds);
+		detectWallCollisions(player1, m_Window);
+		P1projectile.update(dtAsSeconds);
 		//P2projectile.update(dtAsSeconds);
 	}
 }

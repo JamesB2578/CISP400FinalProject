@@ -47,7 +47,7 @@ void Engine::input()
 
 		if (Keyboard::isKeyPressed(Keyboard::Num1))
 		{
-			player1.setCharacterType(1.0, 1.0, "graphics/pete.png", 400.0, 1000.0);
+			player1.setCharacterType(500.0, 1.0, "graphics/pete.png", 400.0, 1000.0);
 			Character1Picked = true;
 			P1projectile.setProjectileType(1);
 			state = State::CharacterSelect2;
@@ -133,7 +133,7 @@ void Engine::input()
 			m_SM.playJump();
 		}
 
-		else if (Keyboard::isKeyPressed(Keyboard::Space))
+		else if (Keyboard::isKeyPressed(Keyboard::Space) && P1projectile.isInFlight() == false)
 		{
 
 			P1projectile.launch(player1.getCenter().x, player1.getCenter().y);

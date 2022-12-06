@@ -31,7 +31,7 @@ Sprite Projectile::getSprite(){
     return m_Sprite;
 }
 void Projectile::update(float elapsedTime){
-    m_Position.x += m_ProjectileDistanceX * elapsedTime;
+    m_Position.x += m_ProjectileSpeed * elapsedTime;
     m_Sprite.setPosition(m_Position);
     if (m_Position.x < m_MinX || m_Position.x > m_MaxX ||
         m_Position.y < m_MinY || m_Position.y > m_MaxY){

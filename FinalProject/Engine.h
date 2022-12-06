@@ -35,7 +35,7 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 	Clock clock;
-	//bool detectWallCollisions(PlayableCharacter& character);
+	void detectWallCollisions(PlayableCharacter& character, RenderWindow& window);
 	//bool detectProjectileCollisions(PlayableCharacter& character, Projectile& projectile);
 	Time m_GameTimeTotal;
 public:

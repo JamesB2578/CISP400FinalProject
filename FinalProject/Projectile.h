@@ -21,7 +21,8 @@ private:
 	float m_MaxY;
 	float m_MinY;
 public:
-	Projectile();
+	Projectile::Projectile();
+	//bool virtual handleInput() = 0;
 	void stop();
 	bool isInFlight();
 	void launch(float startX, float startY);
