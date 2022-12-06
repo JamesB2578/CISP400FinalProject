@@ -5,7 +5,7 @@ PlayerOne::PlayerOne()
 {
 	// Associate a texture with the sprite
 
-	m_JumpDuration = .45;
+	m_JumpDuration = .25;
 }
 
 // A virtual function

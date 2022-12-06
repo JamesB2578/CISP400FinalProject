@@ -5,11 +5,9 @@
 Projectile::Projectile(){
     int damage = 0;
 }
-
 bool Projectile::isInFlight(){
     return m_InFlight;
 }
-
 void Projectile::launch(float startX, float startY){
     m_InFlight = true;
     m_Position.x = startX;
@@ -45,5 +43,7 @@ void Projectile::setLastPressed(Time time){
 Time Projectile::getLastPressed(){
     return m_lastPressed;
 }
-
-
+float Projectile::getDamage()
+{
+    return m_damage;
+}

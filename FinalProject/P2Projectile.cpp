@@ -18,15 +18,17 @@ void PlayerTwoProjectile::setProjectileType(int type)
 		break;
 
 	case 2:
-		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/ogreweight.png"));
-		m_damage = 15;
-		break;
-
-	case 3:
 		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/archerarrow.png"));
 		m_Sprite.rotate(180);
 		m_damage = 5;
 		break;
+
+	case 3:
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/ogreweight.png"));
+		m_damage = 15;
+		break;
+
+
 
 	case 4:
 		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/swordmansword.png"));

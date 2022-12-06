@@ -103,3 +103,8 @@ float PlayableCharacter::getHealth()
 {
     return m_health;
 }
+
+void PlayableCharacter::setHealth(float health)
+{
+    m_health = health;
+}

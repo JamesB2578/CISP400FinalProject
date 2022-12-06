@@ -59,8 +59,8 @@ void Engine::input()
 
 		if (Keyboard::isKeyPressed(Keyboard::Num3))
 		{
-			player1.setCharacterType(2);
-			P1projectile.setProjectileType(2);
+			player1.setCharacterType(3);
+			P1projectile.setProjectileType(3);
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 
@@ -68,8 +68,8 @@ void Engine::input()
 
 		if (Keyboard::isKeyPressed(Keyboard::Num2))
 		{
-			player1.setCharacterType(3);
-			P1projectile.setProjectileType(3);
+			player1.setCharacterType(2);
+			P1projectile.setProjectileType(2);
 			state = State::CharacterSelect2;
 			Character1Picked = true;
 		}

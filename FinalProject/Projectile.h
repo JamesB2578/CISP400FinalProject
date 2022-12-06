@@ -21,7 +21,6 @@ protected:
 	float m_MaxY;
 	float m_MinY;
 	bool m_InFlight = false;
-	//int angle = 0; if we can the bullet to travel in a curve
 
 public:
 	Projectile::Projectile();
@@ -34,6 +33,7 @@ public:
 	void virtual setProjectileType(int type) = 0;
 	Sprite getSprite();
 	float getFireRate();
+	float getDamage();
 	float getCurrentBullet();
 	void setLastPressed(Time time);
 	Time getLastPressed();

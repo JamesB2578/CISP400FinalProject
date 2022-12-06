@@ -1,12 +1,19 @@
 #include "Engine.h"
+#include <iostream>
+using namespace std;
 
 bool Engine::detectProjectileCollisions(PlayableCharacter& character, Projectile& projectile)
 {
-	bool Hit = false;
+	bool hit = false;
+	bool dead = false;
 	if (projectile.getPosition().intersects(character.getPosition()))
 	{
-		Hit = true;
+
+		cout << "hit" << endl;
+		dead = true;
+		
+
 	}
 
-	return Hit;
+	return dead;
 }

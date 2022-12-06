@@ -18,13 +18,13 @@ void PlayerOneProjectile::setProjectileType(int type)
 		break;
 
 	case 2:
-		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/ogreweight.png"));
-		m_damage = 15;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/archerarrow.png"));
+		m_damage = 5;
 		break;
 
 	case 3:
-		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/archerarrow.png"));
-		m_damage = 5;
+		m_Sprite = Sprite(TextureHolder::GetTexture("graphics/ogreweight.png"));
+		m_damage = 15;
 		break;
 
 	case 4:

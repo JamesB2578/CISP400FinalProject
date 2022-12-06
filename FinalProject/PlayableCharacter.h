@@ -38,6 +38,7 @@ public:
 	void virtual setCharacterType(int type) = 0;
 	void update(float elapsedTime);
 	float getHealth();
+	void setHealth(float health);
 
 };
 

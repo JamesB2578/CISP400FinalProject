@@ -4,7 +4,7 @@
 PlayerTwo::PlayerTwo()
 {
 
-	m_JumpDuration = .45;
+	m_JumpDuration = .25;
 }
 
 bool PlayerTwo::handleInput()
